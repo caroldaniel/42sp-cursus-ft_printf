@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 14:26:01 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/04 22:49:17 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/11 16:50:35 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 *	DESCRIPTION
 *	Initialize the format struct with the string given and the va_list variable,
 *	setting the initial values of len and the counter i to 0.
+*	PARAMETERS
+*	#1. The string format in which the output will be printed.
+*	#2. The variadic arguments list
 *	RETURN VALUES
 *	The new, inilialized variable struct format.
 *	
@@ -41,7 +44,7 @@ t_format	*ft_initialize_format(char *format, va_list ap)
 	return (fmt);
 }
 
-t_holder	*ft_initialize_holder(t_holder *h)
+t_holder	*ft_initialize_holder(void)
 {
 	t_holder	*h;
 

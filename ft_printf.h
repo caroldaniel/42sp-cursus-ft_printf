@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:10:30 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/04 23:04:41 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/11 17:17:07 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 # include <stdarg.h>
 # include <stdlib.h>
-// # include "libft.h"
+# include <unistd.h>
+# include <inttypes.h>
+# include "libft/libft.h"
 
 # define	HOLDER_CONVERSION "cspdiuxX%"
 
@@ -42,17 +44,19 @@ typedef	struct s_holder
 int			ft_printf(const char *format, ...);
 int			ft_vprintf(const char *format, va_list ap);
 
-// initialize the format struct
+// Structs' initialization
 t_format	*ft_initialize_format(char *format, va_list ap);
-t_holder	*ft_initialize_holder(t_holder *h);
-// deal with the placeholder's flags and conversions
-void		ft_placeholder(t_format *fmt);
-void		ft_print_conversion(t_format *fmt, t_holder *h);
-t_holder	*ft_parse(t_format *fmt);
-void		ft_parse_conv(t_format *fmt, t_holder *h);
-void		ft_type_conversion(t_format *fmt, t_holder *h);
+t_holder	*ft_initialize_holder(void);
 
-void		ft_putchar (char c);
-char		*ft_strchr(const char *s, int c);
+// Placeholder
+void		ft_placeholder(t_format *fmt);
+void		*ft_parse(t_format *fmt, t_holder *h);
+void		ft_parse_conversion(t_format *fmt, t_holder *h);
+
+// Conversions
+void		ft_type_conversion(t_format *fmt, t_holder *h);
+void		ft_convert_c(t_format *fmt, t_holder *h);
+void		ft_convert_s(t_format *fmt, t_holder *h);
+void		ft_convert_p(t_format *fmt, t_holder *h);
 
 #endif

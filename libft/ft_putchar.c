@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse.c                                         :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 16:38:09 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/11 17:00:18 by cado-car         ###   ########lyon.fr   */
+/*   Created: 2021/08/10 23:44:32 by cado-car          #+#    #+#             */
+/*   Updated: 2021/08/10 23:54:27 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-t_holder	*ft_parse(t_format *fmt)
+/*
+*	LIBRARY
+*	#include <stdio.h>
+*	DESCRIPTION
+*	Writes the character c, cast to an unsigned char, to stdout.
+*	PARAMETERS
+*	#1. The character's numeric value
+*	RETURN VALUES
+*	The putchar() function return the character written as an unsigned char cast 
+*	to an int or EOF on error
+*/
+
+void	ft_putchar (int c)
 {
-	t_holder	*h;
-
-	h = ft_initialize_holder();
-	ft_parse_conversion(fmt, h);
-	return (h);
-}
-
-void	ft_parse_conversion(t_format *fmt, t_holder *h)
-{
-	if (ft_strchr(HOLDER_CONVERSION, fmt->format[fmt->i]))
-		h->conversion = fmt->format[fmt->i];
-	fmt->i++;
+	write(1, &(unsigned char)c, 1);
 }

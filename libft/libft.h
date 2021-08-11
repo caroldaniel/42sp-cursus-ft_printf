@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse.c                                         :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 16:38:09 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/11 17:00:18 by cado-car         ###   ########lyon.fr   */
+/*   Created: 2021/08/10 23:54:41 by cado-car          #+#    #+#             */
+/*   Updated: 2021/08/11 17:07:05 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-t_holder	*ft_parse(t_format *fmt)
-{
-	t_holder	*h;
+# include <unistd.h>
 
-	h = ft_initialize_holder();
-	ft_parse_conversion(fmt, h);
-	return (h);
-}
+// Original libft functions
+int		ft_strlen(const char *s);
+char	*ft_strchr(const char *s, int c);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+char	*ft_strdup(const char *s1);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
-void	ft_parse_conversion(t_format *fmt, t_holder *h)
-{
-	if (ft_strchr(HOLDER_CONVERSION, fmt->format[fmt->i]))
-		h->conversion = fmt->format[fmt->i];
-	fmt->i++;
-}
+// New libft functions
+void	ft_putchar (int c);
+
+
+#endif

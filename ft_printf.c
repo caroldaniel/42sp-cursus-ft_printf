@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 15:33:12 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/04 23:00:20 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/11 17:04:23 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@
 *	DESCRIPTION
 *	The  functions in the printf() family produce output according to a format 
 *	as described below.  The functions printf() and vprintf() write output to 
-*	stdout, the standard output stream; fprintf() and vf‐printf() write output 
-*	to the given output stream; sprintf(), snprintf(), vsprintf() and 
-*	vsnprintf() write to the character string str.
+*	stdout, the standard output stream. 
 *	PARAMETERS
 *	#1. The string format in which the output will be printed.
 *	... The variadic arguments passed to the format string's placeholders.
@@ -48,7 +46,9 @@ int ft_vprintf(const char *format, va_list ap)
 	int			len;
 	
 	fmt = ft_initialize_format(format, ap);
-	while (fmt->format[fmt->i] != '\0')
+	if (!fmt)
+		return (0);
+	while (fmt->format[fmt->i])
 	{
 		if (fmt->format[fmt->i] == '%')
 			ft_placeholder(fmt);
@@ -60,7 +60,6 @@ int ft_vprintf(const char *format, va_list ap)
 		}
 	}	
 	len = fmt->len;
-	va_end(ap);
-	free(ap);
+	free(fmt);
 	return (len);
 }
