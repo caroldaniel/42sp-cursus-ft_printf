@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:10:30 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/11 19:26:04 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/12 19:32:38 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <inttypes.h>
+// # include <inttypes.h>
 # include <wchar.h>
 # include "libft/libft.h"
 
 // # define	HOLDER_CONVERSION "cspdiuxX%"
-# define	HOLDER_CONVERSION "cs"
+# define	HOLDER_CONVERSION "csp"
 
 # define	DECIMAL_BASE "0123456789"
 # define	OCTAGONAL_BASE "01234567"
