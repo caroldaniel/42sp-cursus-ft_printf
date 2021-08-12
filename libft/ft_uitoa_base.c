@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 17:59:03 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/12 19:05:46 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/12 19:36:56 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,10 @@ int	ft_countsize(unsigned long n, int len_base)
 // recursively convert long to string
 void	ft_convbase(unsigned long nbr, char *number, char *base, long i)
 {
-	if (nbr >= 16)
-		ft_convbase((nbr / 16), number, base, (i - 1));
-	number[i] = base[nbr % 16];
+	int	len_base;
+	
+	len_base = ft_strlen(base);
+	if (nbr >= len_base)
+		ft_convbase((nbr / len_base), number, base, (i - 1));
+	number[i] = base[nbr % len_base];
 }
