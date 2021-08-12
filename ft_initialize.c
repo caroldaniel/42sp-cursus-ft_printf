@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 14:26:01 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/11 16:50:35 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/11 19:15:07 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 
 #include "ft_printf.h"
 
-t_format	*ft_initialize_format(char *format, va_list ap)
+t_format	*ft_initialize_format(const char *format, va_list ap)
 {
 	t_format	*fmt;
 

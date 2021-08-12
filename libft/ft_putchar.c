@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 23:44:32 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/10 23:54:27 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/11 19:11:15 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@
 
 void	ft_putchar (int c)
 {
-	write(1, &(unsigned char)c, 1);
+	write(1, &c, 1);
 }

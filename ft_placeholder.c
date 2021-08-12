@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:16:37 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/11 17:00:11 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/11 19:33:47 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_placeholder(t_format *fmt)
 	fmt->i++;
 	h = ft_parse(fmt);
 	if (h->conversion)
+	{
 		ft_type_conversion(fmt, h);
 		fmt->len += write(1, h->argument, h->len);
 		free(h->argument);

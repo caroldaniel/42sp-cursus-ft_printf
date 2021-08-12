@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:10:30 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/11 17:17:07 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/11 19:26:04 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <inttypes.h>
+# include <wchar.h>
 # include "libft/libft.h"
 
-# define	HOLDER_CONVERSION "cspdiuxX%"
+// # define	HOLDER_CONVERSION "cspdiuxX%"
+# define	HOLDER_CONVERSION "cs"
 
 # define	DECIMAL_BASE "0123456789"
 # define	OCTAGONAL_BASE "01234567"
@@ -28,10 +30,10 @@
 
 typedef	struct s_format
 {
-	va_list	ap;
-	char	*format;
-	size_t	len;
-	size_t	i;
+	va_list		ap;
+	const char	*format;
+	size_t		len;
+	size_t		i;
 }			t_format;
 
 typedef	struct s_holder
@@ -45,12 +47,12 @@ int			ft_printf(const char *format, ...);
 int			ft_vprintf(const char *format, va_list ap);
 
 // Structs' initialization
-t_format	*ft_initialize_format(char *format, va_list ap);
+t_format	*ft_initialize_format(const char *format, va_list ap);
 t_holder	*ft_initialize_holder(void);
 
 // Placeholder
 void		ft_placeholder(t_format *fmt);
-void		*ft_parse(t_format *fmt, t_holder *h);
+t_holder	*ft_parse(t_format *fmt);
 void		ft_parse_conversion(t_format *fmt, t_holder *h);
 
 // Conversions
