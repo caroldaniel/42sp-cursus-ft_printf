@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:10:30 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/12 19:32:38 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/12 21:32:23 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,18 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
-// # include <inttypes.h>
+# include <inttypes.h>
 # include <wchar.h>
 # include "libft/libft.h"
 
-// # define	HOLDER_CONVERSION "cspdiuxX%"
-# define	HOLDER_CONVERSION "csp"
+# define	HOLDER_CONVERSION "cspdiuxX%"
 
 # define	DECIMAL_BASE "0123456789"
 # define	OCTAGONAL_BASE "01234567"
-# define	HEXAGONAL_U_BASE "0123456789ABCDEF"
-# define	HEXAGONAL_L_BASE "0123456789abcdef"
+# define	HEXADECIMAL_U_BASE "0123456789ABCDEF"
+# define	HEXADECIMAL_L_BASE "0123456789abcdef"
+
+# define	PTR_START "0x"
 
 typedef	struct s_format
 {
@@ -60,5 +61,6 @@ void		ft_type_conversion(t_format *fmt, t_holder *h);
 void		ft_convert_c(t_format *fmt, t_holder *h);
 void		ft_convert_s(t_format *fmt, t_holder *h);
 void		ft_convert_p(t_format *fmt, t_holder *h);
+void		ft_convert_d_i(t_format *fmt, t_holder *h);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 17:59:03 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/12 19:36:56 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/12 21:33:25 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@
 
 #include "libft.h"
 
-int		ft_countsize(unsigned long n, int len_base);
-void	ft_convbase(unsigned long nbr, char *number, char *base, long i);
+static size_t	ft_countsize(unsigned long n, size_t len_base);
+static void		ft_convbase(unsigned long nbr, char *number, char *base, size_t i);
 
 char	*ft_uitoa_base(unsigned long nbr, char *base)
 {
-	int		len_nbr;
-	int		len_base;
-	char	*number;
+	size_t		len_nbr;
+	size_t		len_base;
+	char		*number;
 	
 	len_base = ft_strlen(base);
 	len_nbr = ft_countsize(nbr, len_base);
@@ -43,7 +43,7 @@ char	*ft_uitoa_base(unsigned long nbr, char *base)
 }
 
 // recursively count long size
-int	ft_countsize(unsigned long n, int len_base)
+static size_t	ft_countsize(unsigned long n, size_t len_base)
 {
 	if ((n / len_base) == 0)
 		return (1);
@@ -52,12 +52,12 @@ int	ft_countsize(unsigned long n, int len_base)
 }
 
 // recursively convert long to string
-void	ft_convbase(unsigned long nbr, char *number, char *base, long i)
+static void	ft_convbase(unsigned long nbr, char *number, char *base, size_t i)
 {
-	int	len_base;
+	size_t	len_base;
 	
 	len_base = ft_strlen(base);
-	if (nbr >= len_base)
+	if (nbr >= (unsigned long int)len_base)
 		ft_convbase((nbr / len_base), number, base, (i - 1));
 	number[i] = base[nbr % len_base];
 }
