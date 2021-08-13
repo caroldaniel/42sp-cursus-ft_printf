@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 15:33:12 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/12 21:44:24 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/12 23:14:08 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 *	printed (excluding the null byte used to end output to strings).
 */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 int	ft_printf(const char *format, ...)
 {
