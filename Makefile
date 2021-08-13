@@ -6,7 +6,7 @@
 #    By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/12 22:24:42 by cado-car          #+#    #+#              #
-#    Updated: 2021/08/12 22:59:32 by cado-car         ###   ########lyon.fr    #
+#    Updated: 2021/08/12 23:01:06 by cado-car         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SRCS		= $(SRC_DIR)/ft_conversion.c \
 			$(SRC_DIR)/ft_convert_p.c \
 			$(SRC_DIR)/ft_convert_pct.c \
 			$(SRC_DIR)/ft_convert_s.c \
-			$(SRC_DIR)/ft_convert_uxX.c \
+			$(SRC_DIR)/ft_convert_ux.c \
 			$(SRC_DIR)/ft_initialize.c \
 			$(SRC_DIR)/ft_parse.c \
 			$(SRC_DIR)/ft_placeholder.c \
