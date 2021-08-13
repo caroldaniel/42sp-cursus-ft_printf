@@ -6,7 +6,7 @@
 #    By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/12 22:24:42 by cado-car          #+#    #+#              #
-#    Updated: 2021/08/13 10:18:03 by cado-car         ###   ########lyon.fr    #
+#    Updated: 2021/08/13 10:37:18 by cado-car         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ SRCS		= $(SRC_DIR)/ft_conversion.c \
 OBJS		= $(SRCS:.c=.o)
 
 HEADER		= -I$(INC_DIR) -I$(LIBFT_DIR)
-LFLAGS		= -L$(LIBFT_DIR) -lft
+LFLAGS		= -L$(LIBFT_DIR)
 
 all:		$(NAME)
 
