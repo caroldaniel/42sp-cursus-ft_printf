@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:10:30 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/12 23:14:34 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/13 15:44:36 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@
 # include <unistd.h>
 # include <inttypes.h>
 # include <wchar.h>
-# include "../libft/libft.h"
+# include "libft.h"
 
 # define	HOLDER_CONVERSION "cspdiuxX%"
 
 # define	DECIMAL_BASE "0123456789"
-# define	OCTAGONAL_BASE "01234567"
 # define	HEXADECIMAL_U_BASE "0123456789ABCDEF"
 # define	HEXADECIMAL_L_BASE "0123456789abcdef"
 
