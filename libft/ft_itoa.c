@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 11:46:17 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/02 11:19:08 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/12 22:22:10 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 */
 
 #include "libft.h"
-int		ft_countsize(long int n);
-void	ft_convbase(long int n, char *number, long int i);
+static int	ft_countsize(long int n);
+static void	ft_convbase(long int n, char *number, long int i);
 
 char	*ft_itoa(int n)
 {
@@ -39,7 +39,7 @@ char	*ft_itoa(int n)
 }
 
 // recursively count integer size
-int	ft_countsize(long int n)
+static int	ft_countsize(long int n)
 {
 	if (n < 0)
 		return (1 + ft_countsize(-n));
@@ -50,7 +50,7 @@ int	ft_countsize(long int n)
 }
 
 // recursively convert integer to string
-void	ft_convbase(long int n, char *number, long int i)
+static void	ft_convbase(long int n, char *number, long int i)
 {
 	if (n < 0)
 	{
