@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 21:41:44 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/12 23:09:12 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/12 23:10:32 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	ft_convert_ux(t_format *fmt, t_holder *h, char *base)
 	unsigned int	nbr;
 	char			*number;
 
+	number = NULL;
 	nbr = (unsigned int)(va_arg(fmt->ap, unsigned int));
 	if (!nbr)
 		h->argument = ft_strdup("");
