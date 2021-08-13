@@ -12,7 +12,7 @@
 
 /*
 *	DESCRIPTION
-*	The uitoa_base() converts an unsigned interger into a string, passing it to 
+*	The uitoa_base() converts an unsigned integer into a string, passing it to 
 *	the base given as an argument.
 *	PARAMETERS
 *	#1. The unsigned long to convert.
