@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_placeholder.c                                   :+:      :+:    :+:   */
+/*   ft_convert_pct.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 16:16:37 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/12 21:43:42 by cado-car         ###   ########lyon.fr   */
+/*   Created: 2021/08/12 22:06:35 by cado-car          #+#    #+#             */
+/*   Updated: 2021/08/12 22:11:35 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_placeholder(t_format *fmt)
+void	ft_convert_pct(t_format *fmt, t_holder *h)
 {
-	t_holder	*h;
-
-	fmt->i++;
-	h = ft_parse(fmt);
-	if (h->conversion)
-	{
-		ft_type_conversion(fmt, h);
-		fmt->len += write(1, h->argument, h->len);
-		free(h->argument);
-	}
-	free(h);
+	h->argument = ft_strdup("%");
+	h->len += 1;
 }

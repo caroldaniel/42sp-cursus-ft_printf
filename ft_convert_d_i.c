@@ -6,13 +6,13 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 21:22:20 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/12 21:32:02 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/12 21:43:13 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		ft_convert_d_i(t_format *fmt, t_holder *h)
+void	ft_convert_d_i(t_format *fmt, t_holder *h)
 {
 	char	*number;
 	int		arg;
@@ -24,7 +24,7 @@ void		ft_convert_d_i(t_format *fmt, t_holder *h)
 	{
 		number = ft_itoa(arg);
 		h->argument = ft_strdup(number);
-		h->len = ft_strlen(h->argument);	
+		h->len = ft_strlen(h->argument);
 	}
 	free(number);
 }

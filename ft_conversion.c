@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:59:19 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/12 21:21:20 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/12 22:05:47 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ void	ft_type_conversion(t_format *fmt, t_holder *h)
 		ft_convert_p(fmt, h);
 	else if (h->conversion == 'd' || h->conversion == 'i')
 		ft_convert_d_i(fmt, h);
-	// else if (h->conversion == 'u')
-	// 	ft_convert_uxX(fmt, h, DECIMAL_BASE);
-	// else if (h->conversion == 'x')
-	// 	ft_convert_uxX(fmt, h, HEXAGONAL_L_BASE);
-	// else if (h->conversion == 'X')
-	// 	ft_convert_uxX(fmt, h, HEXAGONAL_U_BASE);
-	// else if (h->conversion == '%')
-	// 	ft_convert_pct(fmt, h);
+	else if (h->conversion == 'u')
+		ft_convert_uxX(fmt, h, DECIMAL_BASE);
+	else if (h->conversion == 'x')
+		ft_convert_uxX(fmt, h, HEXADECIMAL_L_BASE);
+	else if (h->conversion == 'X')
+		ft_convert_uxX(fmt, h, HEXADECIMAL_U_BASE);
+	else if (h->conversion == '%')
+		ft_convert_pct(fmt, h);
 }

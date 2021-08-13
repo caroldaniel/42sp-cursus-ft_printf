@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 23:44:32 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/11 19:11:15 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/12 21:44:58 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 *	to an int or EOF on error
 */
 
-void	ft_putchar (int c)
+void	ft_putchar(int c)
 {
 	write(1, &c, 1);
 }

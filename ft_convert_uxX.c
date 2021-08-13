@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_placeholder.c                                   :+:      :+:    :+:   */
+/*   ft_convert_uxX.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 16:16:37 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/12 21:43:42 by cado-car         ###   ########lyon.fr   */
+/*   Created: 2021/08/12 21:41:44 by cado-car          #+#    #+#             */
+/*   Updated: 2021/08/12 22:03:23 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_placeholder(t_format *fmt)
+void	ft_convert_uxX(t_format *fmt, t_holder *h, char *base)
 {
-	t_holder	*h;
-
-	fmt->i++;
-	h = ft_parse(fmt);
-	if (h->conversion)
+	unsigned int	nbr;
+	char			*number;
+	
+	nbr = (unsigned int)(va_arg(fmt->ap, unsigned int));
+	if (!nbr)
+		h->argument = ft_strdup("");
+	else
 	{
-		ft_type_conversion(fmt, h);
-		fmt->len += write(1, h->argument, h->len);
-		free(h->argument);
+		number = ft_uitoa_base((unsigned long)nbr, base);
+		h->argument = ft_strdup(number);
+		h->len += ft_strlen(h->argument);
 	}
-	free(h);
+	free(number);
 }

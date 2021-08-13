@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 15:33:12 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/11 17:04:23 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/12 21:44:24 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@
 
 #include "ft_printf.h"
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	va_list ap;
+	va_list	ap;
 	int		len;
-	
+
 	if (format == NULL)
 		return (0);
 	va_start(ap, format);
@@ -40,11 +40,11 @@ int ft_printf(const char *format, ...)
 	return (len);
 }
 
-int ft_vprintf(const char *format, va_list ap)
+int	ft_vprintf(const char *format, va_list ap)
 {
 	t_format	*fmt;
 	int			len;
-	
+
 	fmt = ft_initialize_format(format, ap);
 	if (!fmt)
 		return (0);

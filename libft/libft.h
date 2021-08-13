@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 23:54:41 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/12 21:24:23 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/12 21:46:02 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_itoa(int n);
 
 // New libft functions
-void	ft_putchar (int c);
+void	ft_putchar(int c);
 char	*ft_uitoa_base(unsigned long nbr, char *base);
 
 #endif
