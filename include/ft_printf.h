@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:10:30 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/12 23:07:23 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/12 23:12:31 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 # include <inttypes.h>
 # include <wchar.h>
-# include "libft.h"
+# include "../libft/libft.h"
 
 # define	HOLDER_CONVERSION "cspdiuxX%"
 
