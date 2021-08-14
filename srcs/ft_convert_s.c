@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 17:23:49 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/12 23:13:49 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/13 22:15:25 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_convert_s(t_format *fmt, t_holder *h)
 
 	s = ft_strdup(va_arg(fmt->ap, char *));
 	if (!s)
-		s = ft_strdup("");
+		s = ft_strdup("(null)");
 	h->len = ft_strlen(s);
 	h->argument = (char *)malloc((h->len + 1) * sizeof(char));
 	if (h->argument)
