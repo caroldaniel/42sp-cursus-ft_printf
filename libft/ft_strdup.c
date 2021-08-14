@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 20:24:40 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/13 18:18:51 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/13 22:30:26 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strdup(const char *s1)
 	int		size;
 	char	*ptr;
 
-	if(!s1)
+	if (!s1)
 		return (NULL);
 	size = ft_strlen((char *)s1);
 	ptr = malloc((size + 1) * sizeof(char));
