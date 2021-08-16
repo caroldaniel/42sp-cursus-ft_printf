@@ -6,11 +6,25 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 23:39:08 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/13 22:23:45 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/16 19:36:29 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+
+/*
+*	DESCRIPTION
+*	Converts the variadic argument into a string representing its pointer
+*	location in hexadecimal value, returning it into the holder's 'argument' 
+*	variable.
+*	PARAMETERS
+*	#1. The t_format struct that holds information about the string to be 
+*	formatted.
+*	#2. The t_holder struct that holds all the information about the placeholder
+*	and its flags.
+*	RETURN VALUES
+*	-
+*/
 
 void	ft_convert_p(t_format *fmt, t_holder *h)
 {

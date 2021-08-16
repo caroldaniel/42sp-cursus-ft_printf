@@ -6,11 +6,24 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 17:23:49 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/13 22:15:25 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/16 19:37:49 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+
+/*
+*	DESCRIPTION
+*	Converts the variadic argument into a full string, returning it into the 
+*	holder's 'argument' variable.
+*	PARAMETERS
+*	#1. The t_format struct that holds information about the string to be 
+*	formatted.
+*	#2. The t_holder struct that holds all the information about the placeholder
+*	and its flags.
+*	RETURN VALUES
+*	-
+*/
 
 void	ft_convert_s(t_format *fmt, t_holder *h)
 {

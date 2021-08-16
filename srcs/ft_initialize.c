@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 14:26:01 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/12 23:13:57 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/16 19:27:26 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,14 @@
 *	FT_INITIALIZE_HOLDER
 *	--------------------
 *	DESCRIPTION
-*	
+*	Initialize the holder struct that will retain the information of the 
+*	placeholders flags and conversions. For the mandatory part, that means only 
+*	the conversion variable.
+*	PARAMETERS
+*	-
+*	RETURN VALUES
+*	The new, inilialized variable struct holder.
+
 */
 
 #include "libftprintf.h"

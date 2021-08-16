@@ -6,9 +6,11 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 15:33:12 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/12 23:14:08 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/16 19:20:19 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libftprintf.h"
 
 /*
 *	LIBRARY
@@ -19,13 +21,13 @@
 *	stdout, the standard output stream. 
 *	PARAMETERS
 *	#1. The string format in which the output will be printed.
-*	... The variadic arguments passed to the format string's placeholders.
+*	... The variadic arguments passed to the format string's placeholders. In 
+*	the vprintf() function, the variadic argument are already passed as a 
+*	va_list type.
 *	RETURN VALUES
 *	Upon successful return, these functions return the number of characters 
 *	printed (excluding the null byte used to end output to strings).
 */
-
-#include "libftprintf.h"
 
 int	ft_printf(const char *format, ...)
 {
