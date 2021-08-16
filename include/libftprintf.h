@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:10:30 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/13 22:25:06 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/16 13:49:41 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@
 
 typedef struct s_format
 {
-	va_list		ap;
 	const char	*format;
-	size_t		len;
+	va_list		ap;
 	size_t		i;
+	size_t		len;
 }			t_format;
 
 typedef struct s_holder
