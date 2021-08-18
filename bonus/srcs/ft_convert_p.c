@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 23:39:08 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/17 08:05:16 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/17 08:05:11 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_convert_p(t_format *fmt, t_holder *h)
 	else
 	{
 		number = ft_uitoa_base((unsigned long)ptr, HEXADECIMAL_L_BASE);
-		h->argument = ft_strjoin(PTR_START, number);
+		h->argument = ft_strjoin(PTR_HEX_L_PREFIX, number);
 		free(number);
 	}
 	h->len += ft_strlen(h->argument);

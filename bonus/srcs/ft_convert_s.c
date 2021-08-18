@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert_p.c                                     :+:      :+:    :+:   */
+/*   ft_convert_s.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/11 23:39:08 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/17 08:05:16 by cado-car         ###   ########lyon.fr   */
+/*   Created: 2021/08/11 17:23:49 by cado-car          #+#    #+#             */
+/*   Updated: 2021/08/16 19:37:49 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 /*
 *	DESCRIPTION
-*	Converts the variadic argument into a string representing its pointer
-*	location in hexadecimal value, returning it into the holder's 'argument' 
-*	variable.
+*	Converts the variadic argument into a full string, returning it into the 
+*	holder's 'argument' variable.
 *	PARAMETERS
 *	#1. The t_format struct that holds information about the string to be 
 *	formatted.
@@ -26,20 +25,16 @@
 *	-
 */
 
-void	ft_convert_p(t_format *fmt, t_holder *h)
+void	ft_convert_s(t_format *fmt, t_holder *h)
 {
-	void	*ptr;
-	char	*number;
+	char	*s;
 
-	number = NULL;
-	ptr = va_arg(fmt->ap, void *);
-	if (!ptr)
-		h->argument = ft_strdup("0x0");
-	else
-	{
-		number = ft_uitoa_base((unsigned long)ptr, HEXADECIMAL_L_BASE);
-		h->argument = ft_strjoin(PTR_START, number);
-		free(number);
-	}
-	h->len += ft_strlen(h->argument);
+	s = ft_strdup(va_arg(fmt->ap, char *));
+	if (!s)
+		s = ft_strdup("(null)");
+	h->len = ft_strlen(s);
+	h->argument = (char *)malloc((h->len + 1) * sizeof(char));
+	if (h->argument)
+		ft_strlcpy(h->argument, s, h->len + 1);
+	free(s);
 }

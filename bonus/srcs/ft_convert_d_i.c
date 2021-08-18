@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert_p.c                                     :+:      :+:    :+:   */
+/*   ft_convert_d_i.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/11 23:39:08 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/17 08:05:16 by cado-car         ###   ########lyon.fr   */
+/*   Created: 2021/08/12 21:22:20 by cado-car          #+#    #+#             */
+/*   Updated: 2021/08/18 00:26:26 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 /*
 *	DESCRIPTION
-*	Converts the variadic argument into a string representing its pointer
-*	location in hexadecimal value, returning it into the holder's 'argument' 
-*	variable.
+*	Converts the variadic argument into a decimal number string, returning it
+*	into the holder's 'argument' variable.
 *	PARAMETERS
 *	#1. The t_format struct that holds information about the string to be 
 *	formatted.
@@ -26,20 +25,17 @@
 *	-
 */
 
-void	ft_convert_p(t_format *fmt, t_holder *h)
+void	ft_convert_d_i(t_format *fmt, t_holder *h)
 {
-	void	*ptr;
 	char	*number;
+	int		arg;
+	// int		nbr_len;
 
 	number = NULL;
-	ptr = va_arg(fmt->ap, void *);
-	if (!ptr)
-		h->argument = ft_strdup("0x0");
-	else
-	{
-		number = ft_uitoa_base((unsigned long)ptr, HEXADECIMAL_L_BASE);
-		h->argument = ft_strjoin(PTR_START, number);
-		free(number);
-	}
-	h->len += ft_strlen(h->argument);
+	arg = (int)va_arg(fmt->ap, int);
+	number = ft_itoa(arg);
+	// nbr_len = ft_strlen(number);
+	h->argument = ft_strdup(number);
+	h->len = ft_strlen(h->argument);
+	free(number);
 }

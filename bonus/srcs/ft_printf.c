@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 15:33:12 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/18 12:21:23 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/16 19:20:19 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	ft_vprintf(const char *format, va_list ap)
 			fmt->i++;
 			fmt->len++;
 		}
-	}
+	}	
 	len = fmt->len;
 	free(fmt);
 	return (len);
