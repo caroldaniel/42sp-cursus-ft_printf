@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 11:46:17 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/12 22:22:10 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 13:03:36 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 static int	ft_countsize(long int n);
 static void	ft_convbase(long int n, char *number, long int i);
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long int n)
 {
 	char		*number;
 	long int	len;

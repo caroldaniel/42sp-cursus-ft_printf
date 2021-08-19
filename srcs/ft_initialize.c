@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 14:26:01 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/16 19:27:26 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/17 23:57:14 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,11 @@ t_holder	*ft_initialize_holder(void)
 	h = malloc(sizeof(t_holder));
 	if (!h)
 		return (NULL);
+	h->left_justify = false;
+	h->prefix = NULL;
+	h->padding = ' ';
+	h->width = 0;
+	h->precision = -1;
 	h->conversion = '\0';
 	h->argument = NULL;
 	h->len = 0;

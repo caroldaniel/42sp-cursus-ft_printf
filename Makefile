@@ -6,7 +6,7 @@
 #    By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/12 22:24:42 by cado-car          #+#    #+#              #
-#    Updated: 2021/08/13 17:20:21 by cado-car         ###   ########lyon.fr    #
+#    Updated: 2021/08/19 15:54:47 by cado-car         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,8 @@ $(LIBFT):
 			make -C $(LIBFT_DIR)
 			cp $(LIBFT) $(NAME)
 
+bonus:		all
+
 clean:
 			make clean -C $(LIBFT_DIR)
 			$(RM) $(OBJS)
@@ -62,5 +64,7 @@ fclean:		clean
 			$(RM) $(NAME)
 
 re:			fclean all
+
+rebonus:	fclean bonus
 
 .PHONY:		all clean fclean re

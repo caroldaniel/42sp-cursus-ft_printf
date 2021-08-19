@@ -6,11 +6,12 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 21:22:20 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/16 19:35:46 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 15:20:56 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+static void	ft_convert_d_i_width(t_holder *h, int sign);
 
 /*
 *	DESCRIPTION
@@ -27,13 +28,54 @@
 
 void	ft_convert_d_i(t_format *fmt, t_holder *h)
 {
-	char	*number;
-	int		arg;
+	int			sign;
+	long int	arg;
 
-	number = NULL;
+	sign = 1;
 	arg = (int)va_arg(fmt->ap, int);
-	number = ft_itoa(arg);
-	h->argument = ft_strdup(number);
+	if (arg < 0)
+	{
+		sign *= -1;
+		h->argument = ft_uitoa_base(-arg, DECIMAL_BASE);
+	}
+	else
+		h->argument = ft_uitoa_base(arg, DECIMAL_BASE);
+	if (h->precision > -1)
+	{
+		if (!h->precision && arg == 0)
+		{
+			free(h->argument);
+			h->argument = ft_strdup("");
+		}
+		ft_fill_left_pad(&h->argument, '0', h->precision);
+		h->padding = ' ';
+	}
+	ft_convert_d_i_width(h, sign);
 	h->len = ft_strlen(h->argument);
-	free(number);
+}
+
+static void	ft_convert_d_i_width(t_holder *h, int sign)
+{
+	if (h->left_justify)
+	{
+		ft_add_prefix(h, sign);
+		ft_fill_right_pad(&h->argument, ' ', h->width);
+	}
+	else
+	{
+		if (h->padding == ' ')
+		{
+			ft_add_prefix(h, sign);
+			ft_fill_left_pad(&h->argument, h->padding, h->width);
+		}
+		else if (h->padding == '0')
+		{
+			if (sign < 0 || ft_strchr(h->prefix, ' ') || \
+				ft_strchr(h->prefix, '+'))
+				ft_fill_left_pad(&h->argument, h->padding, h->width - 1);
+			else
+				ft_fill_left_pad(&h->argument, h->padding, h->width);
+			ft_add_prefix(h, sign);
+		}
+	}
 }
