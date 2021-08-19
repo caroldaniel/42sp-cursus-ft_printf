@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:16:37 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/18 23:58:25 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 00:08:00 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	ft_placeholder(t_format *fmt)
 	t_holder	*h;
 
 	fmt->i++;
-	h = ft_parse(fmt);
+	h = ft_initialize_holder();
+	ft_parse(fmt, h);
 	if (h->conversion)
 	{
 		ft_type_conversion(fmt, h);

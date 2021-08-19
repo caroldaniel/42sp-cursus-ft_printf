@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:10:30 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/18 17:38:22 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 00:02:53 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ t_holder	*ft_initialize_holder(void);
 
 // Placeholder
 void		ft_placeholder(t_format *fmt);
-t_holder	*ft_parse(t_format *fmt);
+void		*ft_parse(t_format *fmt, t_holder *h);
 void		ft_parse_flags(t_format *fmt, t_holder *h);
 void		ft_parse_width(t_format *fmt, t_holder *h);
 void		ft_parse_precision(t_format *fmt, t_holder *h);

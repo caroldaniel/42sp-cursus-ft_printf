@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:38:09 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/18 23:59:45 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 00:07:07 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,23 +27,22 @@
 
 #include <stdio.h>
 
-t_holder	*ft_parse(t_format *fmt)
+void	*ft_parse(t_format *fmt, t_holder *h)
 {
-	t_holder	*h;
-
-	h = ft_initialize_holder();
 	ft_parse_flags(fmt, h);
 	ft_parse_width(fmt, h);
 	ft_parse_precision(fmt, h);
 	ft_parse_conversion(fmt, h);
-	// printf("left_justify: %i\n", h->left_justify);
-	// printf("prefix: %s\n", h->prefix);
-	// printf("padding: %c\n", h->padding);
-	// printf("width: %i\n", h->width);
-	// printf("precision: %i\n", h->precision);
-	// printf("conversion: %c\n", h->conversion);
-	// printf("argument: %s\n", h->argument);
-	// printf("len: %li\n", h->len);
+	if (!h->conversion && ft_strchr(HOLDER_ALL_FLAGS, fmt->format[fmt->i]))
+		ft_parse(fmt, h);
+	printf("left_justify: %i\n", h->left_justify);
+	printf("prefix: %s\n", h->prefix);
+	printf("padding: %c\n", h->padding);
+	printf("width: %i\n", h->width);
+	printf("precision: %i\n", h->precision);
+	printf("conversion: %c\n", h->conversion);
+	printf("argument: %s\n", h->argument);
+	printf("len: %li\n", h->len);
 	return (h);
 }
 
@@ -128,6 +127,6 @@ void	ft_parse_conversion(t_format *fmt, t_holder *h)
 	if (ft_strchr(HOLDER_CONVERSION, fmt->format[fmt->i]))
 	{
 		h->conversion = fmt->format[fmt->i];
-		fmt->i++;	
+		fmt->i++;
 	}
 }
