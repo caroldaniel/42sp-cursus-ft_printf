@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 21:41:44 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 13:07:57 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 14:01:37 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_convert_ux(t_format *fmt, t_holder *h, char *base)
 	else
 		h->argument = ft_strdup(number);
 	free(number);
-	if (h->precision > -1)
+	if (h->precision > ft_strlen(h->argument))
 	{
 		ft_fill_left_pad(&h->argument, '0', h->precision);
 		h->padding = ' ';
