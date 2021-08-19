@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 21:22:20 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 15:03:44 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 15:10:03 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,20 +51,22 @@ void	ft_convert_d_i(t_format *fmt, t_holder *h)
 
 static void	ft_convert_d_i_width(t_holder *h, int sign)
 {
-	if (h->padding == '0')
+	if (h->left_justify)
 	{
-		if (!h->left_justify)
-			ft_fill_left_pad(&h->argument, h->padding, h->width);
-		else
-			ft_fill_right_pad(&h->argument, ' ', h->width);	
 		ft_add_prefix(h, sign);
+		ft_fill_right_pad(&h->argument, ' ', h->width);		
 	}
-	else if (h->padding == ' ')
+	else
 	{
-		ft_add_prefix(h, sign);
-		if (!h->left_justify)
+		if (h->padding == ' ')
+		{
+			ft_add_prefix(h, sign);
 			ft_fill_left_pad(&h->argument, h->padding, h->width);
-		else
-			ft_fill_right_pad(&h->argument, ' ', h->width);	
+		}
+		else if (h->padding == '0')
+		{
+			ft_fill_left_pad(&h->argument, h->padding, h->width - 1);
+			ft_add_prefix(h, sign);
+		}
 	}
 }
