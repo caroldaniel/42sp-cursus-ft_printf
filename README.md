@@ -138,5 +138,5 @@ To use the libftprintf in your code you will need to include the header:
 
 When compiling your own code with `libftprintf`, don't forget to use the flags:
 ```sh
-$> ... -lft -L path/to/libft.a -I path/to/libft.h 
+$> ... -lftprintf -L path/to/libftprintf.a -I path/to/libftprintf.h 
 ```
