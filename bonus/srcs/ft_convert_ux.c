@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 21:41:44 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 12:25:53 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 12:45:29 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ void	ft_convert_ux(t_format *fmt, t_holder *h, char *base)
 		ft_fill_left_pad(&h->argument, '0', h->precision);
 		h->padding = ' ';
 	}
-	ft_add_prefix(h, 0);
+	if (nbr)
+		ft_add_prefix(h, 0);
 	if (!h->left_justify)
 		ft_fill_left_pad(&h->argument, h->padding, h->width);
 	else
