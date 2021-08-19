@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 21:22:20 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 13:14:22 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 13:16:19 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,18 @@
 
 void	ft_convert_d_i(t_format *fmt, t_holder *h)
 {
-	int			sign;
+	int	sign;
 	int	arg;
 
 	sign = 1;
 	arg = (int)va_arg(fmt->ap, int);
 	if (arg < 0)
+	{
 		sign *= -1;
-
-	h->argument = ft_itoa(-arg);
+		h->argument = ft_itoa(-arg);
+	}
+	else
+		h->argument = ft_itoa(arg);
 	if (h->precision > -1)
 	{
 		ft_fill_left_pad(&h->argument, '0', h->precision);
