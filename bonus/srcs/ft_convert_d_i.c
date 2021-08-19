@@ -6,11 +6,12 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 21:22:20 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 14:01:25 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 14:50:56 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+static void	ft_convert_d_i_width(t_holder *h, int sign);
 
 /*
 *	DESCRIPTION
@@ -44,10 +45,26 @@ void	ft_convert_d_i(t_format *fmt, t_holder *h)
 		ft_fill_left_pad(&h->argument, '0', h->precision);
 		h->padding = ' ';
 	}
-	ft_add_prefix(h, sign);
-	if (!h->left_justify)
-		ft_fill_left_pad(&h->argument, h->padding, h->width);
-	else
-		ft_fill_right_pad(&h->argument, h->padding, h->width);
+	ft_convert_d_i_width(h, sign);
 	h->len = ft_strlen(h->argument);
+}
+
+static void	ft_convert_d_i_width(t_holder *h, int sign)
+{
+	if (h->padding == '0')
+	{
+		if (!h->left_justify)
+			ft_fill_left_pad(&h->argument, h->padding, h->width - 1);
+		else
+			ft_fill_right_pad(&h->argument, ' ', h->width - 1);	
+		ft_add_prefix(h, sign);
+	}
+	else if (h->padding == ' ')
+	{
+		ft_add_prefix(h, sign);
+		if (!h->left_justify)
+			ft_fill_left_pad(&h->argument, h->padding, h->width);
+		else
+			ft_fill_right_pad(&h->argument, ' ', h->width);	
+	}
 }
