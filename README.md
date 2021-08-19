@@ -37,8 +37,8 @@ Bonus
 </h3>
 
 > <i>Manage any combination of the following flags: 
-> - ’-0.’ and minimum field width with all conversions
-> - Manage all the following flags: ’# +’ (yes, one of them is a space)<i>
+> - `-0.` and minimum field width with all conversions
+> - Manage all the following flags: `# +`(yes, one of them is a space)<i>
 
 ---
 
