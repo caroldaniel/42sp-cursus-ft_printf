@@ -6,11 +6,12 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:59:19 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 12:07:03 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 12:40:31 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+static void	ft_prefix_ux(t_holder *h);
 
 /*
 *	DESCRIPTION
@@ -103,5 +104,25 @@ void	ft_add_prefix(t_holder	*h, int sign)
 			ft_fill_left_pad(&h->argument, SPACE, len);
 		else if (sign == -1)
 			ft_fill_left_pad(&h->argument, MINUS, len);
+	}
+	else if (h->conversion == 'x' || h->conversion == 'X' \
+			|| h->conversion == 'o')
+		ft_prefix_ux(h);
+}
+
+static void	ft_prefix_ux(t_holder *h)
+{
+	char	*temp;
+
+	temp = h->argument;
+	if (ft_strchr(h->prefix, '#'))
+	{
+		if (h->conversion == 'x')
+			h->argument = ft_strjoin(PTR_HEX_L_PREFIX, temp);
+		if (h->conversion == 'X')
+			h->argument = ft_strjoin(HEX_U_PREFIX, temp);
+		if (h->conversion == 'o')
+			h->argument = ft_strjoin(OCT_PREFIX, temp);
+		free(temp);
 	}
 }
