@@ -21,7 +21,8 @@ RM			= /bin/rm -f
 INCS		= libft.h
 SRCS		= ft_strlen.c ft_memcpy.c ft_strlcpy.c ft_strchr.c ft_strdup.c \
 			ft_strjoin.c ft_itoa.c ft_putchar.c ft_uitoa_base.c ft_isdigit.c \
-			ft_appendchr.c ft_isascii.c ft_isprint.c ft_strlcat.c ft_memset.c
+			ft_appendchr.c ft_isascii.c ft_isprint.c ft_strlcat.c ft_memset.c \
+			ft_strndup.c
 
 OBJS		= $(SRCS:.c=.o)
 

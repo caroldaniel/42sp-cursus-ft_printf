@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 23:54:41 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 10:50:47 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 11:37:33 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 void	ft_putchar(int c);
 char	*ft_uitoa_base(unsigned long nbr, char *base);
 char	*ft_appendchr(char const *s, char const c);
+char	*ft_strndup(const char *s1, size_t n);
 
 #endif
