@@ -67,7 +67,7 @@ Conversion functions
 - [`ft_convert_p.c`](srcs/ft_convert_p.c)
 - [`ft_convert_pct.c`](srcs/ft_convert_pct.c)
 - [`ft_convert_s.c`](srcs/ft_convert_s.c)
-- [`ft_convert_ux.c`](srcs/ft_convert_s.c)
+- [`ft_convert_ux.c`](srcs/ft_convert_ux.c)
 
 ### Conversions & Flags & Expected Order
 
