@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 21:22:20 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 14:59:15 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 15:01:17 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static void	ft_convert_d_i_width(t_holder *h, int sign)
 			ft_fill_left_pad(&h->argument, h->padding, h->width);
 		else
 			ft_fill_right_pad(&h->argument, ' ', h->width);	
-		if (sign == 0)
+		if (sign == -1)
 			h->argument[0] = '-';
 		if (ft_strchr(h->prefix, '+'))
 			h->argument[0] = '+';
