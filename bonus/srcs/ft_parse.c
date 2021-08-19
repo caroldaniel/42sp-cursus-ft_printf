@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:38:09 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 00:44:01 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 00:46:48 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,9 @@ void	ft_parse_width(t_format *fmt, t_holder *h)
 		}
 		fmt->i++;
 	}
-	else
+	else if (ft_isdigit(fmt->format[fmt->i]))
 	{
+		width = 0;
 		while (ft_isdigit(fmt->format[fmt->i]))
 		{
 			width = (width * 10) + (fmt->format[fmt->i] - '0');
