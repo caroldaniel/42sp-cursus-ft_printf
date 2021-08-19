@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:38:09 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 00:36:56 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 00:44:01 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	ft_parse_width(t_format *fmt, t_holder *h)
 {
 	int	width;
 
-	width = 0;
+	width = h->width;
 	if (fmt->format[fmt->i] == HOLDER_STAR)
 	{
 		width = (int)va_arg(fmt->ap, int);
@@ -98,7 +98,7 @@ void	ft_parse_precision(t_format *fmt, t_holder *h)
 {
 	int	precision;
 
-	precision = -1;
+	precision = h->precision;
 	if (fmt->format[fmt->i] == HOLDER_PRECISION)
 	{
 		fmt->i++;
