@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 21:22:20 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/18 00:26:26 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 10:21:03 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,26 @@
 
 void	ft_convert_d_i(t_format *fmt, t_holder *h)
 {
-	char	*number;
+	int		sign;
 	int		arg;
-	// int		nbr_len;
 
-	number = NULL;
+	sign = 1;
 	arg = (int)va_arg(fmt->ap, int);
-	number = ft_itoa(arg);
-	// nbr_len = ft_strlen(number);
-	h->argument = ft_strdup(number);
+	if (arg < 0)
+	{
+		sign *= -1;
+		arg *= -1;
+	}
+	h->argument = ft_itoa(arg);
+	if (h->precision > -1)
+	{
+		ft_fill_left_pad(&h->argument, '0', h->precision);
+		h->padding = ' ';
+	}
+	ft_add_prefix(h, sign);
+	if (!h->left_justify)
+		ft_fill_left_pad(&h->argument, h->padding, h->width);
+	else
+		ft_fill_right_pad(&h->argument, h->padding, h->width);
 	h->len = ft_strlen(h->argument);
-	free(number);
 }

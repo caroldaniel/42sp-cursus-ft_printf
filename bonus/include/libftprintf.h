@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:10:30 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 01:27:41 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 10:19:29 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@
 # define	PTR_HEX_L_PREFIX "0x"
 # define	HEX_U_PREFIX "0X"
 # define	OCT_PREFIX "0"
+# define	MINUS '-'
+# define	PLUS '+'
+# define	SPACE ' '
 
 typedef enum e_bool { false, true }	t_bool;
 
@@ -82,5 +85,10 @@ void		ft_convert_p(t_format *fmt, t_holder *h);
 void		ft_convert_d_i(t_format *fmt, t_holder *h);
 void		ft_convert_ux(t_format *fmt, t_holder *h, char *base);
 void		ft_convert_pct(t_holder *h, char pct);
+
+// Conversions utils
+void		ft_fill_left_pad(char **src, char padding, int width);
+void		ft_fill_right_pad(char **src, char padding, int width);
+void		ft_add_prefix(t_holder	*h, int sign);
 
 #endif

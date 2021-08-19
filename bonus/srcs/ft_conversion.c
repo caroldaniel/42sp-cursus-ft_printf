@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:59:19 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 01:27:17 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 10:21:49 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,61 @@ void	ft_type_conversion(t_format *fmt, t_holder *h)
 		ft_convert_ux(fmt, h, OCTAL_BASE);
 	else
 		ft_convert_pct(h, h->conversion);
+}
+
+void	ft_fill_left_pad(char **src, char padding, int width)
+{
+	char	*temp;
+	size_t	strlen;
+	size_t	padlen;
+
+	strlen = ft_strlen(*src);
+	if (!width || width < (int)strlen)
+		width = strlen;
+	temp = (char *)malloc(width * sizeof(char));
+	if (!temp)
+		return ;
+	padlen = width - strlen;
+	ft_memset(temp, padding, padlen);
+	temp[padlen] = '\0';
+	ft_strlcat(temp, *src, width + 1);
+	free(*src);
+	*src = temp;
+}
+
+void	ft_fill_right_pad(char **src, char padding, int width)
+{
+	char	*temp;
+	size_t	strlen;
+	size_t	padlen;
+
+	strlen = ft_strlen(*src);
+	if (!width || width < (int)strlen)
+		width = strlen;
+	temp = (char *)malloc(width * sizeof(char));
+	if (!temp)
+		return ;
+	ft_strlcpy(temp, *src, strlen + 1);
+	padlen = width - strlen;
+	ft_memset(&temp[strlen], padding, padlen);
+	temp[width] = '\0';
+	free(*src);
+	*src = temp;
+}
+
+void	ft_add_prefix(t_holder	*h, int sign)
+{
+	int	len;
+
+	len = (int)ft_strlen(h->argument);
+	if (h->conversion == 'd' || h->conversion == 'i')
+	{
+		len += 1;
+		if (ft_strchr(h->prefix, PLUS) && sign == 1)
+			ft_fill_left_pad(&h->argument, PLUS, len);
+		else if (ft_strchr(h->prefix, SPACE) && sign == 1)
+			ft_fill_left_pad(&h->argument, SPACE, len);
+		else if (sign == -1)
+			ft_fill_left_pad(&h->argument, MINUS, len);
+	}
 }
