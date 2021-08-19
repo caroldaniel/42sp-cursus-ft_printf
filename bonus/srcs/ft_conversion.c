@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:59:19 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 00:57:21 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 01:27:17 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ void	ft_type_conversion(t_format *fmt, t_holder *h)
 	else if (h->conversion == 'o')
 		ft_convert_ux(fmt, h, OCTAL_BASE);
 	else
-		ft_convert_pct(h);
+		ft_convert_pct(h, h->conversion);
 }
