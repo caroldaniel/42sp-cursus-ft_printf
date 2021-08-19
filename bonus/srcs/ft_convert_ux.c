@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 21:41:44 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 12:45:29 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 13:07:57 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ void	ft_convert_ux(t_format *fmt, t_holder *h, char *base)
 	number = NULL;
 	nbr = (unsigned int)(va_arg(fmt->ap, unsigned int));
 	number = ft_uitoa_base((unsigned long)nbr, base);
-	h->argument = ft_strdup(number);
+	if (!h->precision)
+		h->argument = ft_strdup("");
+	else
+		h->argument = ft_strdup(number);
 	free(number);
 	if (h->precision > -1)
 	{
