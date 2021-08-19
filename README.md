@@ -46,31 +46,20 @@ Bonus
 The project
 </h2>
 
-<<<<<<< HEAD
-### Implementation
-=======
 ### Implementation files
->>>>>>> a1b8b5810307ff187429f47bb21909ace683d302
-
+	
 - [`Makefile`](Makefile)
 - [`libft functions`](libft/)
 - [`header file`](include/libftprintf.h)
-<<<<<<< HEAD
-Main functions
-=======
 
 Main functions
-
->>>>>>> a1b8b5810307ff187429f47bb21909ace683d302
+	
 - [`printf.c`](srcs/printf.c)
 - [`initialize.c`](srcs/initialize.c)
 - [`placeholder.c`](srcs/placeholder.c)
 - [`parse.c`](srcs/parse.c)
 - [`conversion.c`](srcs/printf.c)
 
-<<<<<<< HEAD
-
-=======
 Conversion functions
 
 - [`convert_c.c`](srcs/convert_c.c)
@@ -111,13 +100,12 @@ Conversion functions
 |`%`		  | `-` , `0` , `+` ,  ...			| `10`, `5` , ... | `.`, `.10`, `.5`, `...` | `c`, `d`, `i`, `s`, ... |  
 
 ##### * : optional flags and definitions
->>>>>>> a1b8b5810307ff187429f47bb21909ace683d302
+
 ---
 <h2>
 Usage
 </h2>
 
-<<<<<<< HEAD
 ### Instructions
 
 When compiling `get_next_line` or its **bonus** version, be sure to include the following flags
@@ -162,4 +150,3 @@ When compiling your own code with `libftprintf`, don't forget to use the flags:
 ```sh
 $> ... -lft -L path/to/libft.a -I path/to/libft.h 
 ```
->>>>>>> a1b8b5810307ff187429f47bb21909ace683d302
