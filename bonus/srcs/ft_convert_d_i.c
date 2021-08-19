@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 21:22:20 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 15:16:10 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 15:19:56 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ void	ft_convert_d_i(t_format *fmt, t_holder *h)
 		h->argument = ft_uitoa_base(arg, DECIMAL_BASE);
 	if (h->precision > -1)
 	{
+		if (!h->precision && nbr == 0)
+		{
+			free(h->argument);
+			h->argument = ft_strdup("");
+		}
 		ft_fill_left_pad(&h->argument, '0', h->precision);
 		h->padding = ' ';
 	}
@@ -54,7 +59,7 @@ static void	ft_convert_d_i_width(t_holder *h, int sign)
 	if (h->left_justify)
 	{
 		ft_add_prefix(h, sign);
-		ft_fill_right_pad(&h->argument, ' ', h->width);		
+		ft_fill_right_pad(&h->argument, ' ', h->width);
 	}
 	else
 	{
