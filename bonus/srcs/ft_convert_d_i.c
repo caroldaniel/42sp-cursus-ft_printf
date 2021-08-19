@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 21:22:20 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 13:08:49 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 13:10:37 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_convert_d_i(t_format *fmt, t_holder *h)
 	long int	arg;
 
 	sign = 1;
-	arg = (int)va_arg(fmt->ap, int);
+	arg = (long int)va_arg(fmt->ap, int);
 	if (arg < 0)
 	{
 		sign *= -1;
