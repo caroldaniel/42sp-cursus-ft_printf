@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:38:09 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 00:46:48 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 01:02:41 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,7 @@ void	ft_parse_precision(t_format *fmt, t_holder *h)
 
 void	ft_parse_conversion(t_format *fmt, t_holder *h)
 {
-	if (ft_strchr(HOLDER_CONVERSION, fmt->format[fmt->i]))
+	if (ft_isprint(fmt->format[fmt->i]))
 	{
 		h->conversion = fmt->format[fmt->i];
 		fmt->i++;

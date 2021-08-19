@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 23:54:41 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/17 23:55:15 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 01:01:24 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_itoa(int n);
 int		ft_isdigit(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
 
 // New libft functions
 void	ft_putchar(int c);
