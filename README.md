@@ -108,12 +108,12 @@ Usage
 
 ### Instructions
 
-When compiling `get_next_line` or its **bonus** version, be sure to include the following flags
+<p>When compiling `get_next_line` or its **bonus** version, be sure to include the following flags</p>
 
 ```sh
-$> gcc -Wall -Wextra -Werror -D BUFFER_SIZE=xxx <files>.c.
+$> gcc -Wall -Wextra -Werror -D BUFFER_SIZE=xxx <files>.c
 ```
-Where the `xxx` can be substituted by the number of bytes read at a time into the buffer for the `read` function. 
+<p>Where the `xxx` can be substituted by the number of bytes read at a time into the buffer for the `read` function. </p>
 =======
 ### Requirements
 `libftprintf` requires a *gcc* compiler and some standard libraries.
