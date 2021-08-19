@@ -54,20 +54,20 @@ The project
 
 Main functions
 	
-- [`printf.c`](srcs/printf.c)
-- [`initialize.c`](srcs/initialize.c)
-- [`placeholder.c`](srcs/placeholder.c)
-- [`parse.c`](srcs/parse.c)
-- [`conversion.c`](srcs/printf.c)
+- [`ft_printf.c`](srcs/ft_printf.c)
+- [`ft_initialize.c`](srcs/ft_initialize.c)
+- [`ft_placeholder.c`](srcs/ft_placeholder.c)
+- [`ft_parse.c`](srcs/ft_parse.c)
+- [`ft_conversion.c`](srcs/ft_conversion.c)
 
 Conversion functions
 
-- [`convert_c.c`](srcs/convert_c.c)
-- [`convert_d_i.c`](srcs/convert_d_i.c)
-- [`convert_p.c`](srcs/convert_p.c)
-- [`convert_pct.c`](srcs/convert_pct.c)
-- [`convert_s.c`](srcs/convert_s.c)
-- [`convert_ux.c`](srcs/convert_s.c)
+- [`ft_convert_c.c`](srcs/ft_convert_c.c)
+- [`ft_convert_d_i.c`](srcs/ft_convert_d_i.c)
+- [`ft_convert_p.c`](srcs/ft_convert_p.c)
+- [`ft_convert_pct.c`](srcs/ft_convert_pct.c)
+- [`ft_convert_s.c`](srcs/ft_convert_s.c)
+- [`ft_convert_ux.c`](srcs/ft_convert_s.c)
 
 ### Conversions & Flags & Expected Order
 
