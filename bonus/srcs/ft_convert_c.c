@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 11:53:12 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 10:52:03 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 15:41:40 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,17 @@
 void	ft_convert_c(t_format *fmt, t_holder *h)
 {
 	char	ch;
-	char	*temp;
 
 	ch = (wint_t)va_arg(fmt->ap, wint_t);
-	h->argument = ft_strdup("");
-	temp = h->argument;
-	h->argument = ft_appendchr(temp, ch);
-	free(temp);
-	if (!h->left_justify)
-		ft_fill_left_pad(&h->argument, h->padding, h->width);
+	if (!h->width)
+		h->width += 1;
+	h->argument = (char *)malloc(h->width * sizeof(char));
+	if (!h->argument)
+		return ;
+	ft_memset(h->argument, SPACE, h->width);
+	if (h->left_justify == true)
+		h->argument[0] = ch;
 	else
-		ft_fill_right_pad(&h->argument, h->padding, h->width);
-	h->len = ft_strlen(h->argument);
+		h->argument[h->width - 1] = ch;
+	h->len = h->width;
 }
