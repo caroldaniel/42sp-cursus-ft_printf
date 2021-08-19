@@ -95,10 +95,11 @@ Conversion functions
 | **\*** | Add a placeholder for numeric values that shall be passed through the variadic arguments  |Extra			|
 
 
-| Holder key  | Prefix and justification flags	| Minimum Width | Precision		| Conversion 	|
+| Holder key  | Prefix and justification flags *| Minimum Width *| Precision *	| Conversion 	|
 |-------------|---------------------------------|---------------|---------------|---------------|
 |`%`		  | `-` , `0` , `+` ,  ...			| `10`, `5` , ... | `.`, `.10`, `.5`, `...` | `c`, `d`, `i`, `s`, ... |  
 
+**`*` optional flags and definitions **
 ---
 <h2>
 Usage
