@@ -6,12 +6,11 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 21:41:44 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 14:22:54 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/19 14:24:08 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-#include <stdio.h>
 
 /*
 *	DESCRIPTION
@@ -36,11 +35,9 @@ void	ft_convert_ux(t_format *fmt, t_holder *h, char *base)
 	number = ft_uitoa_base((unsigned long)nbr, base);
 	h->argument = ft_strdup(number);
 	free(number);
-	printf("\n%s\n", h->argument);
 	if (h->precision > -1)
 	{
 		ft_fill_left_pad(&h->argument, '0', h->precision);
-		printf("\n%s\n", h->argument);
 		h->padding = ' ';
 	}
 	if (nbr)
