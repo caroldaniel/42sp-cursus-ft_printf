@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:10:30 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/20 12:02:53 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/20 12:44:12 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include "../libft/libft.h"
 
 # define	HOLDER_CONVERSION "cspdiuxX%o"
+# define	HOLDER_ALL "-0# +123456789*"
 # define	HOLDER_ALL_FLAGS "-0# +"
 # define	HOLDER_JUSTIFY '-'
 # define	HOLDER_PREFIX "# +"
