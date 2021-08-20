@@ -6,11 +6,11 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:16:37 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/20 19:12:47 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/20 19:46:41 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 /*
 *	LIBRARY
