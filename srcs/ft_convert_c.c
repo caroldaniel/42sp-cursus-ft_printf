@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 11:53:12 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/20 19:11:44 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/20 19:34:16 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_convert_c(t_format *fmt, t_holder *h)
 	if (!h->argument)
 		return ;
 	ft_memset(h->argument, SPACE, h->width);
-	if (h->left_justify == true)
+	if (h->left_justify == 1)
 		h->argument[0] = ch;
 	else
 		h->argument[h->width - 1] = ch;

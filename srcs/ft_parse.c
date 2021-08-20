@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:38:09 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/20 19:12:42 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/20 19:34:32 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_parse_flags(t_format *fmt, t_holder *h)
 	while (ft_strchr(HOLDER_ALL_FLAGS, fmt->format[fmt->i]))
 	{
 		if (fmt->format[fmt->i] == HOLDER_JUSTIFY)
-			h->left_justify = true;
+			h->left_justify = 1;
 		if (ft_strchr(HOLDER_PREFIX, fmt->format[fmt->i]))
 		{
 			temp = h->prefix;
@@ -70,7 +70,7 @@ void	ft_parse_width(t_format *fmt, t_holder *h)
 		width = (int)va_arg(fmt->ap, int);
 		if (width < 0)
 		{
-			h->left_justify = true;
+			h->left_justify = 1;
 			width *= -1;
 		}
 		fmt->i++;

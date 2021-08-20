@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:10:30 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/20 19:10:54 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/20 19:33:09 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@
 # define	PLUS '+'
 # define	SPACE ' '
 
-typedef enum e_bool { false, true }	t_bool;
-
 typedef struct s_format
 {
 	const char	*format;
@@ -53,7 +51,7 @@ typedef struct s_format
 
 typedef struct s_holder
 {
-	t_bool	left_justify;
+	int		left_justify;
 	char	*prefix;
 	char	padding;
 	int		width;
