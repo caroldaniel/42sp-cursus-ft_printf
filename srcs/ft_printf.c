@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 15:33:12 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/16 19:20:19 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/20 11:46:59 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,7 @@ int	ft_vprintf(const char *format, va_list ap)
 		if (fmt->format[fmt->i] == '%')
 			ft_placeholder(fmt);
 		else
-		{
-			ft_putchar(fmt->format[fmt->i]);
-			fmt->i++;
-			fmt->len++;
-		}
+			fmt->len += write(1, fmt->format[fmt->i++]);
 	}	
 	len = fmt->len;
 	free(fmt);
