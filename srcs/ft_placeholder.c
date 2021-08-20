@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:16:37 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 10:17:49 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/20 11:59:49 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	ft_placeholder(t_format *fmt)
 		fmt->len += write(1, h->argument, h->len);
 		free(h->argument);
 	}
-	if (h->prefix)
-		free(h->prefix);
+	free(h->prefix);
 	free(h);
 }
