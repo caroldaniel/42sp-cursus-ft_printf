@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:38:09 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/20 12:45:22 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/20 12:46:04 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	*ft_parse(t_format *fmt, t_holder *h)
 	ft_parse_width(fmt, h);
 	ft_parse_precision(fmt, h);
 	ft_parse_conversion(fmt, h);
-	if (!h->conversion && (ft_strchr(HOLDER_ALL, fmt->format[fmt->i]))
+	if (!h->conversion && (ft_strchr(HOLDER_ALL, fmt->format[fmt->i])))
 		ft_parse(fmt, h);
 	return (h);
 }
