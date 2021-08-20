@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 21:22:20 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 15:20:56 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/20 13:07:50 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,8 @@ void	ft_convert_d_i(t_format *fmt, t_holder *h)
 	sign = 1;
 	arg = (int)va_arg(fmt->ap, int);
 	if (arg < 0)
-	{
 		sign *= -1;
-		h->argument = ft_uitoa_base(-arg, DECIMAL_BASE);
-	}
-	else
-		h->argument = ft_uitoa_base(arg, DECIMAL_BASE);
+	h->argument = ft_uitoa_base(sign * arg, DECIMAL_BASE);
 	if (h->precision > -1)
 	{
 		if (!h->precision && arg == 0)
