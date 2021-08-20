@@ -6,7 +6,7 @@
 /*   By: cado-car <cado-car@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 13:10:30 by cado-car          #+#    #+#             */
-/*   Updated: 2021/08/19 10:19:29 by cado-car         ###   ########lyon.fr   */
+/*   Updated: 2021/08/20 12:02:53 by cado-car         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void		ft_convert_s(t_format *fmt, t_holder *h);
 void		ft_convert_p(t_format *fmt, t_holder *h);
 void		ft_convert_d_i(t_format *fmt, t_holder *h);
 void		ft_convert_ux(t_format *fmt, t_holder *h, char *base);
-void		ft_convert_pct(t_holder *h, char pct);
+void		ft_convert_pct(t_holder *h);
 
 // Conversions utils
 void		ft_fill_left_pad(char **src, char padding, int width);
