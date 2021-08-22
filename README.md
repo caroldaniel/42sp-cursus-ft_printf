@@ -97,7 +97,7 @@ Conversion functions
 
 | Holder key  | Prefix and justification flags *| Minimum Width *| Precision *	| Conversion 	|
 |-------------|---------------------------------|---------------|---------------|---------------|
-|`%`		  | `-` , `0` , `+` ,  ...			| `10`, `5` , ... | `.`, `.10`, `.5`, `...` | `c`, `d`, `i`, `s`, ... |  
+|`%`		  | `-` , `0` , `+` ,  ...			| `10`, `5` , ... | `.`, `.10`, `.5`, ... | `c`, `d`, `i`, `s`, ... |  
 
 ##### * : optional flags and definitions
 
